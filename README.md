@@ -50,7 +50,7 @@ myGraph.xml 에서 입력파일명과 출력파일명을 받는 변수를 각각
  - Cal_EC.dim 
 
 
-
+<option .xml 파일 생성 단계>
 ~ S1_proc1_CA_TC_out_VH_VV_INCIDENCEANGLE.xml
    
     <file>${file}</file>                                  #READ의 파일 입력 부분 위와 같이 변경
