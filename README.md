@@ -32,12 +32,12 @@ step
           sanp 설치 후 환경변수 path 추가 
           
 [ 02_SNAP_setting (xml 생성 및 수정) ]
- - 1. graph builder(icon) click
- - 2. 방사보정 : Radar --> Radiometric --> Calibration
- - 3. 지형보정 : Radar --> Ellipsoid Correction --> Ellipsoid-Correction-RD
- - 4. CONNECT GRAPH로 각 box들 연결
- - 5. 각 탭 별 클릭하여 옵션 확인 및 선택 
- - 6. incidience angle 생성 및 save
+ 1. graph builder(icon) click
+ 2. 방사보정 : Radar --> Radiometric --> Calibration
+ 3. 지형보정 : Radar --> Ellipsoid Correction --> Ellipsoid-Correction-RD
+ 4. CONNECT GRAPH로 각 box들 연결
+ 5. 각 탭 별 클릭하여 옵션 확인 및 선택 
+ 6. incidience angle 생성 및 save
       
       --> myGraph.xml 파일 생성
 ![image](https://user-images.githubusercontent.com/95207627/173534239-5f93755f-4233-45dc-91cc-c89a82dd503e.png)
@@ -45,10 +45,12 @@ step
 myGraph.xml 에서 입력파일명과 출력파일명을 받는 변수를 각각 ${file} 및 ${target}으로 설정할 것
 
 다시 graph bullder돌아와서 수정된 myGraph.xml RUN
+(output)
+Cal_EC.data
+Cal_EC.dim 
 
- -> Cal_EC.data
- -> Cal_EC.dim 생성
----------------------------------------------
+
+
 ~ S1_proc1_CA_TC_out_VH_VV_INCIDENCEANGLE.xml
    
     <file>${file}</file>                                  #READ의 파일 입력 부분 위와 같이 변경
@@ -87,7 +89,7 @@ myGraph.xml 에서 입력파일명과 출력파일명을 받는 변수를 각각
     <file>${target}</file>                                #WRITE의 파일 입력 부분 위와 같이 변경
     <formatName>GDAL-GTiff-WRITER</formatName>            #formatname 확인
    
----------------------------------------------
+
 5개의 XML 데이터 graph builder로 생성
 (만들어진 거 반복 사용 가능)
 
