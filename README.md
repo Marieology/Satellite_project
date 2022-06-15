@@ -45,9 +45,9 @@ step
 myGraph.xml 에서 입력파일명과 출력파일명을 받는 변수를 각각 ${file} 및 ${target}으로 설정할 것
 
 다시 graph bullder돌아와서 수정된 myGraph.xml RUN
-(output)
-Cal_EC.data
-Cal_EC.dim 
+결과 파일 2개 생성 됨
+ - Cal_EC.data
+ - Cal_EC.dim 
 
 
 
