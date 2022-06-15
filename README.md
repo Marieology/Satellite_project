@@ -46,8 +46,8 @@ myGraph.xml 에서 입력파일명과 출력파일명을 받는 변수를 각각
 
 다시 graph bullder돌아와서 수정된 myGraph.xml RUN
 
-Cal_EC.data
-Cal_EC.dim 생성
+ -> Cal_EC.data
+ -> Cal_EC.dim 생성
 ---------------------------------------------
 ~ S1_proc1_CA_TC_out_VH_VV_INCIDENCEANGLE.xml
    
