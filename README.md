@@ -51,6 +51,7 @@ myGraph.xml 에서 입력파일명과 출력파일명을 받는 변수를 각각
 
 
 <option .xml 파일 생성 단계>
+
 ~ S1_proc1_CA_TC_out_VH_VV_INCIDENCEANGLE.xml
    
     <file>${file}</file>                                  #READ의 파일 입력 부분 위와 같이 변경
@@ -95,6 +96,7 @@ myGraph.xml 에서 입력파일명과 출력파일명을 받는 변수를 각각
 
 
 [ 03_bat ]
+ 
  SNAP과 연동하여 방사보정 및 지형보정 영상 생성 방법 -> SNAP_CommandLine_Tutorial.PDF 참고
  GPT <SNAP 옵션 파일 경로> -Pfile=<입력파일 경로> -Ptarget=<출력파일 경로>
  
