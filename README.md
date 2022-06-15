@@ -25,13 +25,13 @@ step
 ![image](https://user-images.githubusercontent.com/95207627/173530976-21101211-df43-482f-88bc-f3a2faf4ba22.png)
 ![image](https://user-images.githubusercontent.com/95207627/173531109-f095cfc7-9890-4864-8dad-7e09842e5120.png)
 
- 01_downloaded_data and tools
+[ 01_downloaded_data and tools ]
  - image data : S1A_IW_GRDH_1SDV_20150501T092218_20150501T092243_005726_007596_AF9E.zip
                
  - snap : https://step.esa.int/main/download/snap-download/
           sanp 설치 후 환경변수 path 추가 
           
- 02_SNAP_setting (xml 생성 및 수정)
+[ 02_SNAP_setting (xml 생성 및 수정) ]
  - 1. graph builder(icon) click
  - 2. 방사보정 : Radar --> Radiometric --> Calibration
  - 3. 지형보정 : Radar --> Ellipsoid Correction --> Ellipsoid-Correction-RD
@@ -47,7 +47,7 @@ myGraph.xml 에서 입력파일명과 출력파일명을 받는 변수를 각각
 다시 graph bullder돌아와서 수정된 myGraph.xml RUN
 
 Cal_EC.data
-Cal_EC.dim 
+Cal_EC.dim 생성
 ---------------------------------------------
 ~ S1_proc1_CA_TC_out_VH_VV_INCIDENCEANGLE.xml
    
@@ -88,18 +88,22 @@ Cal_EC.dim
     <formatName>GDAL-GTiff-WRITER</formatName>            #formatname 확인
    
 ---------------------------------------------
-4개의 XML 데이터 graph builder로 생성
+5개의 XML 데이터 graph builder로 생성
+(만들어진 거 반복 사용 가능)
 
- 03_bat
+
+[ 03_bat ]
  SNAP과 연동하여 방사보정 및 지형보정 영상 생성 방법 -> SNAP_CommandLine_Tutorial.PDF 참고
  GPT <SNAP 옵션 파일 경로> -Pfile=<입력파일 경로> -Ptarget=<출력파일 경로>
  
  *S1_proc1_CA_TC_out_VH_VV_INCIDENCEANGLE.xml 파일은 SNAP의 방사보정(Calibration) 및 지형보정(Ellipsoid-Correction-RD) 옵션을 저장한 것으로 
   원본 S1 파일을 xml 파일과 연계하여 방사보정 및 지형보정이 완료된 파일을 생성함
+  
  *이 때 원본 → GeoTIFF 포맷으로 바로 변환 시 작업이 중단되는 등의 문제가 종종 발생하므로 BEAM-DIMAP(확장자 .dim) 파일 생성 후 GeoTIFF로 변환하여 생성하는 방향으로 구현함
+ 
  *GeoTIFF 파일을 생성하는 커맨드 라인 실행시 proj.db 파일을 찾을 수 없다는 에러가 발생할 경우 proj.db 파일이 포함되어 있는 경로를 환경변수로 잡아줄 것 
 
- batch 파일 실행 단계
+ <batch 파일 실행 단계>
  
   1. 방사보정, 지형보정, incidence angle 저장
   2. VH 편파 Linear scale to dB scale
@@ -111,10 +115,11 @@ Cal_EC.dim
   *gpt 구동시 지형보정 과정에서 에러 발생 Unknown element 'outputComplex'
    --> 해당 xml파일에서 <outputComplex>false</outputComplex>삭제하고 저장
   
- 04_SNAP_output
+[ 04_SNAP_output ]
  tif 파일 생성
 
 
 # 2] r -> 원하는 구역 crop
+
 
 # 3] py -> binary classification & gaussian filtering classification
